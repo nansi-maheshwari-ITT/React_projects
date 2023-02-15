@@ -158,10 +158,10 @@ ul {
 
 @media screen and (max-width: 520px) {
   .main-box {
-    max-width: 300px;
+    max-width: 350px;
   }
   .side-icon {
-    margin-left: 2px;
+    margin-left: 15px;
   }
   .to-do-list li .element-container {
     width: 69%;

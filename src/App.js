@@ -1,38 +1,38 @@
-import "./app.css";
+import "./App.css";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
-function App() {
-  const [userEnteredTodo, setUserEnteredTodo] = useState("");
-  const [pendingTask, setPendingTask] = useState(0);
+const App = () => {
+  const [userInputTodo, setUserInputTodo] = useState("");
+  const [pendingTaskCount, setPendingTaskCount] = useState(0);
   const [todoList, setTodoList] = useState([]);
   const [completedTodoList, setCompletedTodoList] = useState([]);
 
-  const addItem = (e) => {
-    e.preventDefault();
-    const trimmedUserEnteredTodo = userEnteredTodo.trim();
+  const addItem = (event) => {
+    event.preventDefault();
+    const trimmedUserInputTodo = userInputTodo.trim();
     setTodoList((oldValue) => {
-      return [...oldValue, trimmedUserEnteredTodo];
+      return [...oldValue, trimmedUserInputTodo];
     });
-    setPendingTask(todoList.length + 1);
-    setUserEnteredTodo("");
+    setPendingTaskCount(todoList.length + 1);
+    setUserInputTodo("");
   };
 
   const deleteAllTask = () => {
     setTodoList([]);
     setCompletedTodoList([]);
-    setPendingTask(0);
+    setPendingTaskCount(0);
   };
 
   const editSelectedTask = (item, index) => {
-    setUserEnteredTodo(todoList[index]);
+    setUserInputTodo(todoList[index]);
     deleteTask(item, index);
   };
 
   const handleInputChange = (event) => {
-    setUserEnteredTodo(event.target.value);
+    setUserInputTodo(event.target.value);
   };
 
   const deleteTask = (item, index) => {
@@ -41,7 +41,7 @@ function App() {
         return index !== id;
       });
     });
-    setPendingTask(todoList.length - 1);
+    setPendingTaskCount(todoList.length - 1);
   };
 
   const markTaskCompleted = (item, index) => {
@@ -67,12 +67,13 @@ function App() {
         <form className="input-field" onSubmit={addItem}>
           <input
             placeholder="Add a task..."
-            value={userEnteredTodo}
+            value={userInputTodo}
             onChange={handleInputChange}
           />
           <button
-            className={`add-button ${userEnteredTodo.trim() ? "active" : ""}`}
-            type="submit" >
+            className={`add-button ${userInputTodo.trim() ? "active" : ""}`}
+            type="submit"
+          >
             <AddIcon></AddIcon>
           </button>
         </form>
@@ -134,7 +135,7 @@ function App() {
           </ul>
         </div>
         <div className="footer">
-          <span>You have {pendingTask} pending Task</span>
+          <span>You have {pendingTaskCount} pending Task</span>
           <button
             className={`delete-all ${
               todoList.length || completedTodoList.length ? "active" : ""
@@ -147,6 +148,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
