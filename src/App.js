@@ -5,19 +5,19 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 
 const App = () => {
-  const [userInputTodo, setUserInputTodo] = useState("");
+  const [taskName, setTaskName] = useState("");
   const [pendingTaskCount, setPendingTaskCount] = useState(0);
   const [todoList, setTodoList] = useState([]);
   const [completedTodoList, setCompletedTodoList] = useState([]);
 
   const addItem = (event) => {
     event.preventDefault();
-    const trimmedUserInputTodo = userInputTodo.trim();
+    const trimmedtaskName = taskName.trim();
     setTodoList((oldValue) => {
-      return [...oldValue, trimmedUserInputTodo];
+      return [...oldValue, trimmedtaskName];
     });
     setPendingTaskCount(todoList.length + 1);
-    setUserInputTodo("");
+    setTaskName("");
   };
 
   const deleteAllTask = () => {
@@ -27,12 +27,12 @@ const App = () => {
   };
 
   const editSelectedTask = (item, index) => {
-    setUserInputTodo(todoList[index]);
+    setTaskName(todoList[index]);
     deleteTask(item, index);
   };
 
   const handleInputChange = (event) => {
-    setUserInputTodo(event.target.value);
+    setTaskName(event.target.value);
   };
 
   const deleteTask = (item, index) => {
@@ -67,11 +67,11 @@ const App = () => {
         <form className="input-field" onSubmit={addItem}>
           <input
             placeholder="Add a task..."
-            value={userInputTodo}
+            value={taskName}
             onChange={handleInputChange}
           />
           <button
-            className={`add-button ${userInputTodo.trim() ? "active" : ""}`}
+            className={`add-button ${taskName.trim() ? "active" : ""}`}
             type="submit"
           >
             <AddIcon></AddIcon>
