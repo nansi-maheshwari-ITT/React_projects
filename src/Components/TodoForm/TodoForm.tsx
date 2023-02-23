@@ -2,12 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { InputField, Input, AddButton } from "./TodoFormStyles";
+import { TodoFormProps } from "./TodoFormPropsInterface";
 
-interface TodoFormProps {
-  addTodoItem: (name: string) => void;
-  taskName: string;
-  setTaskName: React.Dispatch<React.SetStateAction<string>>;
-}
 
 const TodoForm: React.FC<TodoFormProps> = ({
   addTodoItem,
@@ -21,16 +17,16 @@ const TodoForm: React.FC<TodoFormProps> = ({
       setTaskName("");
     }
   };
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTaskName(event.target.value);
   };
-  
+
   return (
     <InputField onSubmit={handleSubmit}>
       <Input
         placeholder="Add a task..."
         value={taskName}
-        onChange={handleChange}
+        onChange={handleInputChange}
       />
       <AddButton className={taskName.trim() ? "active" : ""} type="submit">
         <FontAwesomeIcon icon={faPlus} />

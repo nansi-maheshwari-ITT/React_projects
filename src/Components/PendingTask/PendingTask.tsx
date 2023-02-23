@@ -10,16 +10,9 @@ import {
   EditButton,
   DeleteButton,
 } from "./PendingTaskStyles";
+import { PendingTaskProps } from "./PendingTaskPropsInterface";
 
-interface CompletedTaskProps {
-  todoItem: TodoListItem;
-  index: number;
-  todoList: TodoListItem[];
-  setTodoList: React.Dispatch<React.SetStateAction<TodoListItem[]>>;
-  setTaskName: React.Dispatch<React.SetStateAction<string>>;
-}
-
-const PendingTask: React.FC<CompletedTaskProps> = ({
+const PendingTask: React.FC<PendingTaskProps> = ({
   todoItem,
   index,
   setTodoList,
@@ -27,9 +20,7 @@ const PendingTask: React.FC<CompletedTaskProps> = ({
   setTaskName,
 }) => {
   const markTaskCompleted = () => {
-    const itemIndex = todoList.findIndex(
-      (item) => item.id === todoItem.id
-    );
+    const itemIndex = todoList.findIndex((item) => item.id === todoItem.id);
     const updatedTodoList = [...todoList];
     updatedTodoList[itemIndex].completed = true;
     setTodoList(updatedTodoList);

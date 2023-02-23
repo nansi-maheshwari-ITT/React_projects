@@ -1,11 +1,7 @@
 import { TodoListItem } from "../../Interfaces/TodoListItem";
 import { FooterDiv, DeleteAllTaskButton } from "./FooterStyle";
-
-interface FooterProps {
-  setTodoList: React.Dispatch<React.SetStateAction<TodoListItem[]>>;
-  pendingTaskCount: number;
-  todoList: TodoListItem[];
-}
+import { FooterProps } from "./FooterPropsInterface";
+import { ClearAll } from "./FooterConstant";
 
 const Footer: React.FC<FooterProps> = ({
   setTodoList,
@@ -22,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({
         className={todoList.length > 0 ? "active" : ""}
         onClick={deleteAllTask}
       >
-        Clear all
+      {ClearAll}
       </DeleteAllTaskButton>
     </FooterDiv>
   );

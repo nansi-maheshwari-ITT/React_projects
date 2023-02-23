@@ -6,12 +6,8 @@ import {
   CompletedListDeleteButton,
   CompletedListElementContainer,
 } from "./CompletedTaskStyles";
+import { CompletedTaskProps } from "./CompletedTaskPropsInterface";
 
-interface CompletedTaskProps {
-  todoItem: TodoListItem;
-  index: number;
-  setTodoList: React.Dispatch<React.SetStateAction<TodoListItem[]>>;
-}
 const CompletedTask: React.FC<CompletedTaskProps> = ({
   todoItem,
   index,
