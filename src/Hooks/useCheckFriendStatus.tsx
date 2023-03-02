@@ -4,11 +4,7 @@ export const UseCheckFriendStatus = (isOnline: boolean) => {
   const [friendStatus, setFriendStatus] = useState<string>("");
 
   useEffect(() => {
-    if (isOnline) {
-      setFriendStatus("online");
-    } else {
-      setFriendStatus("offline");
-    }
+   {isOnline?setFriendStatus("online"):setFriendStatus("offline")}
   }, [isOnline]);
 
   return friendStatus;
