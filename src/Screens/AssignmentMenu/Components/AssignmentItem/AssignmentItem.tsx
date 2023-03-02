@@ -1,19 +1,27 @@
 import React from "react";
-import { Li, LiDiv } from "./AssignmentItemStyle";
+import { ListItem, LiDiv } from "./AssignmentItemStyle";
 import { AssignmentItemProps } from "./AssignmentItemProps";
 
 const AssignmentItem: React.FC<AssignmentItemProps> = ({
   handleMenuSelection,
-  assignmentNumber,
+  assignmentName,
 }) => {
   const handleItemClick = () => {
-    handleMenuSelection(assignmentNumber);
-  };
+    {assignmentName === "Counter" && (
+      handleMenuSelection("counterScreen")
+     )}
+    {assignmentName === "Form" && (
+     handleMenuSelection("formScreen")
+    )}
+    {assignmentName === "Status Checker" && (
+      handleMenuSelection("statusCheckerScreen")
+     )}
+  }
 
   return (
-    <Li>
-      <LiDiv onClick={handleItemClick}>Assignment {assignmentNumber}</LiDiv>
-    </Li>
+    <ListItem>
+      <LiDiv onClick={handleItemClick}>{assignmentName} Assignment</LiDiv>
+    </ListItem>
   );
 };
 

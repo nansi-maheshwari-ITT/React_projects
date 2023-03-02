@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { FormData } from "./FormDataInterface";
 import { Input, FormContainer, FormDiv } from "./FormStyle";
-import { SignIn } from "../../../../Constants/Constants";
+import { SignIn } from "./Constants";
 import { AuthButton } from "../../../../Components/Atoms/AuthButton/AuthButton";
 
 export const Form = () => {
@@ -50,7 +50,7 @@ export const Form = () => {
           onChange={handleFormDataChange}
         />
       </FormDiv>
-      <AuthButton AuthButtonText={"SignIn"}></AuthButton>
+      <AuthButton authButtonText={SignIn}></AuthButton>
     </FormContainer>
   );
 };

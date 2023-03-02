@@ -4,5 +4,5 @@ import { HomeBtn } from "./HomeButtonStyle";
 export const HomeButton: React.FC<HomeButtonProps> = ({
   handleMenuSelection,
 }) => {
-  return <HomeBtn onClick={() => handleMenuSelection(0)}>Home</HomeBtn>;
+  return <HomeBtn onClick={() => handleMenuSelection("home")}>Home</HomeBtn>;
 };

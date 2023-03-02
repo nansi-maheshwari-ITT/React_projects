@@ -1,8 +1,10 @@
-import { AssignmentProps as Assignment1Props } from "../../Interfaces/SharedInterfaces";
+import { CounterAssignmentProps } from "./CounterAssignmentProps";
 import { HomeButton } from "../../Components/Atoms/HomeButton/HomeButton";
 import { CounterBox } from "./Components/CounterBox/CounterBox";
 
-const Assignment1: React.FC<Assignment1Props> = ({ handleMenuSelection }) => {
+const CounterAssignment: React.FC<CounterAssignmentProps> = ({
+  handleMenuSelection,
+}) => {
   return (
     <>
       <HomeButton handleMenuSelection={handleMenuSelection}></HomeButton>
@@ -11,4 +13,4 @@ const Assignment1: React.FC<Assignment1Props> = ({ handleMenuSelection }) => {
   );
 };
 
-export default Assignment1;
+export default CounterAssignment;

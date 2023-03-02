@@ -1,3 +1,3 @@
 export interface HomeButtonProps {
-  handleMenuSelection: (name: number) => void;
+  handleMenuSelection: (name: string) => void;
 }

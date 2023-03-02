@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const Li = styled.li``;
+const ListItem = styled.li``;
 
 const LiDiv = styled.div`
   margin-top: 20px;
@@ -14,4 +14,4 @@ const LiDiv = styled.div`
   }
 `;
 
-export { Li, LiDiv };
+export { ListItem, LiDiv };

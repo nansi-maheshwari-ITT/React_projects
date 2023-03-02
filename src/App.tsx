@@ -1,7 +1,7 @@
 import React from "react";
-import AssignmentDisplay from "./Components/AssignmentDisplay/AssignmentDisplay";
+import AssignmentSelector from "./Components/AssignmentSelector/AssignmentSelector";
 const App = () => {
-  return <AssignmentDisplay></AssignmentDisplay>;
+  return <AssignmentSelector></AssignmentSelector>;
 };
 
 export default App;

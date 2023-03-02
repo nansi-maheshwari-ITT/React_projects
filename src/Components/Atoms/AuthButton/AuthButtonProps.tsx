@@ -1,4 +1,4 @@
 export interface AuthButtonProps {
-	AuthButtonText:string;
+	authButtonText:string;
 	handleStatusChange?:()=>void;
 }

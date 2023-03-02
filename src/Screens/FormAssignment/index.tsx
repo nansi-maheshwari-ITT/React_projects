@@ -1,8 +1,10 @@
-import { AssignmentProps as Assignment2Props } from "../../Interfaces/SharedInterfaces";
+import { FormAssignmentProps } from "./FormAssignmentProps";
 import { HomeButton } from "../../Components/Atoms/HomeButton/HomeButton";
 import { Form } from "./Components/Form/Form";
 
-const Assignment2: React.FC<Assignment2Props> = ({ handleMenuSelection }) => {
+const FormAssignment: React.FC<FormAssignmentProps> = ({
+  handleMenuSelection,
+}) => {
   return (
     <>
       <HomeButton handleMenuSelection={handleMenuSelection}></HomeButton>
@@ -11,4 +13,4 @@ const Assignment2: React.FC<Assignment2Props> = ({ handleMenuSelection }) => {
   );
 };
 
-export default Assignment2;
+export default FormAssignment;

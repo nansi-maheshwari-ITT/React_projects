@@ -1,7 +1,9 @@
-import { AssignmentProps as Assignment3Props } from "../../Interfaces/SharedInterfaces";
+import { StatusCheckerAssignmentProps } from "./StatusCheckerAssignmentProps";
 import { HomeButton } from "../../Components/Atoms/HomeButton/HomeButton";
 import { FriendStatus } from "./Components/FriendStatus/FriendStatus";
-const Assignment3: React.FC<Assignment3Props> = ({ handleMenuSelection }) => {
+const StatusCheckerAssignment: React.FC<StatusCheckerAssignmentProps> = ({
+  handleMenuSelection,
+}) => {
   return (
     <>
       <HomeButton handleMenuSelection={handleMenuSelection}></HomeButton>
@@ -10,4 +12,4 @@ const Assignment3: React.FC<Assignment3Props> = ({ handleMenuSelection }) => {
   );
 };
 
-export default Assignment3;
+export default StatusCheckerAssignment;

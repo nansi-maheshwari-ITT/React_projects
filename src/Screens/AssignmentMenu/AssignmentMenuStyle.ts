@@ -21,9 +21,9 @@ const CardHeading = styled.h1`
   text-align: center;
 `;
 
-const Ul = styled.ul`
+const Assignmentlist = styled.ul`
   list-style: none;
   margin: 4em 1em;
 `;
 
-export { Card, CardHeading, Ul };
+export { Card, CardHeading, Assignmentlist };

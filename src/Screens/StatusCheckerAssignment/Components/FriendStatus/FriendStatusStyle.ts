@@ -1,5 +1,5 @@
 import styled from "styled-components"
-const Div=styled.div`
+const MainDiv=styled.div`
 background-color: white;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
   width:100%;
@@ -20,4 +20,4 @@ background-color: white;
 const Heading=styled.h1`
 margin-bottom:15%;
 `
-export {Div,Heading}
+export {MainDiv,Heading}
