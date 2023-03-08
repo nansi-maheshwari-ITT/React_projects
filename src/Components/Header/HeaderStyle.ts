@@ -7,7 +7,7 @@ const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   padding: 1rem 0rem;
-  width:100%;
+  width: 100%;
 `;
 
 const NavItems = styled.ul`
@@ -39,17 +39,16 @@ const NavItems = styled.ul`
 
 const NavToggle = styled.button`
   display: none;
-  
+
   @media (max-width: 768px) {
     display: block;
-	background-color:rgb(22, 78, 78);
-	color:white;
-	border:none;
-	padding: 5px 10px;
+    background-color: rgb(22, 78, 78);
+    color: white;
+    border: none;
+    padding: 5px 10px;
   }
 `;
 
-const NavItem = styled.li``;
 const NavbarLink = styled(NavLink)`
   text-decoration: none;
   color: #fff;
@@ -57,4 +56,4 @@ const NavbarLink = styled(NavLink)`
   font-weight: bold;
 `;
 
-export {NavItem,NavItems,NavLink,NavbarLink,NavToggle,Nav}
+export { NavItems, NavLink, NavbarLink, NavToggle, Nav };

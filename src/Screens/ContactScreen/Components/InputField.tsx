@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 const FormInput = styled.input`
   display: block;
   margin: 20px auto;
@@ -8,13 +8,10 @@ const FormInput = styled.input`
   border-radius: 10px;
 `;
 
-interface inputProps{
-	type:string;
-	placeholder:string;
-
+interface inputProps {
+  type: string;
+  placeholder: string;
 }
-export const InputField:React.FC<inputProps> = ({type,placeholder}) => {
-  return (
-	<FormInput type={type} placeholder={placeholder} ></FormInput>
-  )
-}
+export const InputField: React.FC<inputProps> = ({ type, placeholder }) => {
+  return <FormInput type={type} placeholder={placeholder}></FormInput>;
+};

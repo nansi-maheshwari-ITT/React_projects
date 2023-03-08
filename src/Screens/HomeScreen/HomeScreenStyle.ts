@@ -21,9 +21,9 @@ const ProfileImg = styled.img`
   border-radius: 200px;
 
   @media (max-width: 768px) {
-	height: 250px;
-	width: 250px;
-	border-radius: 150px;
+    height: 250px;
+    width: 250px;
+    border-radius: 150px;
   }
 `;
 const ProfileContent = styled.div`

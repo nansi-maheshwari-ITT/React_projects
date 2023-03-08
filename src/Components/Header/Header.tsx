@@ -1,14 +1,14 @@
 import { useState } from "react";
-import {
-  NavItem,
-  NavItems,
-  NavbarLink,
-  NavToggle,
-  Nav,
-} from "./HeaderStyle";
+import { NavItems, NavbarLink, NavToggle, Nav } from "./HeaderStyle";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "about", label: "About" },
+    { to: "achievements", label: "Achievements" },
+    { to: "contact", label: "Contact" },
+  ];
 
   const handleToggle = () => {
     setShowNav(!showNav);
@@ -21,26 +21,13 @@ const Header = () => {
     <Nav>
       <NavToggle onClick={handleToggle}>☰</NavToggle>
       <NavItems className={showNav ? "show" : ""}>
-        <NavItem>
-          <NavbarLink to="/" onClick={handleNavLinkClick}>
-            Home
-          </NavbarLink>
-        </NavItem>
-        <NavItem>
-          <NavbarLink to="about" onClick={handleNavLinkClick}>
-            About
-          </NavbarLink>
-        </NavItem>
-        <NavItem>
-          <NavbarLink to="achievements" onClick={handleNavLinkClick}>
-            Achievements
-          </NavbarLink>
-        </NavItem>
-        <NavItem>
-          <NavbarLink to="contact" onClick={handleNavLinkClick}>
-            Contact
-          </NavbarLink>
-        </NavItem>
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <NavbarLink to={link.to} onClick={handleNavLinkClick}>
+              {link.label}
+            </NavbarLink>
+          </li>
+        ))}
       </NavItems>
     </Nav>
   );

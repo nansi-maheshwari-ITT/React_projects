@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { AchievementCard } from "./Components/AchievementCard";
 
-const achievementText ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus inventore fugit voluptatum nesciunt rem tenetur veritatis, animi ipsum sit eos.";
+const achievementText =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus inventore fugit voluptatum nesciunt rem tenetur veritatis, animi ipsum sit eos.";
 
 const MainDiv = styled.div`
   display: flex;
